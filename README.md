@@ -1,26 +1,35 @@
-# Discord and Browsers ram limiter 
-By using the function called ```SetProcessWorkingSetSize();``` reduces memory usage by preventing unnecessary cache in the program.
+# Discord and Browsers RAM Limiter
 
-# Browsers
-Browsers supported for now: 
+This project aims to reduce memory usage in Discord and web browsers by utilizing the `SetProcessWorkingSetSize()` function, which helps prevent unnecessary caching in the programs.
+
+## Supported Browsers
+Currently, the following browsers are supported:
 - Thorium
 - Firefox
 - Edge
 - Chrome
 
-if you want some other browser tell me and i will add 
+If you would like support for another browser, please let me know, and i will consider adding it.
 
-# Developers
-[miaf#2458](https://discord.com/users/308986559292768258)
-[faraj#2607](https://discord.com/users/635406751495356436)
+## Developers
+- [miaf#2458](https://discord.com/users/308986559292768258)
+- [faraj#2607](https://discord.com/users/635406751495356436)
 
-# Comments
-If you open the program with DEBUG mode in Visual Studio, the CPU usage of the program may be high. We recommend that you run your program test after compiling as Release AnyCPU.
+## Instructions
 
-# Download
-[Download exe](https://github.com/NextWork123/ram-limiter/releases/download/Ram-Limiter/DiscordRamLimiter.exe)
+To use the Discord and Browsers RAM Limiter:
 
-# Credits
-[Lufzys](https://github.com/Lufzys)
+1. Download the `DiscordRamLimit.exe` file from the [release page](https://github.com/NextWork123/ram-limiter/releases/download/Ram-Limiter/DiscordRamLimiter.exe).
+2. Press Win + R to open the Run dialog.
+3. Type `shell:startup` and press Enter. This will open the `Startup` folder.
+4. Copy the `DiscordRamLimit.exe` file.
+5. Paste the `DiscordRamLimit.exe` file into the `Startup` folder.
+6. The `DiscordRamLimit` program will now start automatically with Windows boot.
 
-This project is licensed under the terms of [MIT License](https://github.com/faraaj/discord-ram-limiter/blob/main/LICENSE)
+## Comments
+When running the program in DEBUG mode within Visual Studio, the CPU usage may be higher. We recommend performing your program tests after compiling as Release AnyCPU.
+
+## Credits
+This project was made possible with contributions from [Lufzys](https://github.com/Lufzys).
+
+This project is licensed under the terms of the [MIT License](https://github.com/faraaj/discord-ram-limiter/blob/main/LICENSE).
