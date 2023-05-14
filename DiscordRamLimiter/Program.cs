@@ -46,7 +46,7 @@ namespace DiscordRamLimiter
                     }
                 }
 
-                Thread.Sleep(5000); // Pausa di 5 secondi per ridurre l'utilizzo della CPU
+                Thread.Sleep(1000); // Pause for 1 seconds to reduce CPU usage
             }
         }
 
