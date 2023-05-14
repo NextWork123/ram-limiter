@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -26,27 +25,23 @@ namespace DiscordRamLimiter
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE);
 
-            Process[] processes = Process.GetProcesses();
+            string[] targetProcessNames = { "discord", "chrome", "firefox", "edge", "thorium" };
 
             while (true)
             {
+                Process[] processes = Process.GetProcesses()
+                    .Where(p => targetProcessNames.Any(name => p.ProcessName.ToLower().Contains(name)))
+                    .ToArray();
+
                 foreach (Process process in processes)
                 {
-                    string processNameLower = process.ProcessName.ToLower();
-
-                    if (processNameLower.Contains("discord") || processNameLower.Contains("chrome") || processNameLower.Contains("firefox") || processNameLower.Contains("edge") || processNameLower.Contains("thorium"))
+                    if (!process.HasExited && process.Responding && Environment.OSVersion.Platform == PlatformID.Win32NT)
                     {
-                        GC.Collect(); // Force garbage collection
-                        GC.WaitForPendingFinalizers(); // Wait for all finalizers to complete before continuing.
-
-                        if (Environment.OSVersion.Platform == PlatformID.Win32NT) // Check OS version platform
-                        {
-                            SetProcessWorkingSetSize(process.Handle, min, max);
-                        }
+                        SetProcessWorkingSetSize(process.Handle, min, max);
                     }
                 }
 
-                Thread.Sleep(1000); // Pause for 1 seconds to reduce CPU usage
+                Thread.Sleep(1000); // Pause for 1 second to reduce CPU usage
             }
         }
 
