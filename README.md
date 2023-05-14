@@ -1,8 +1,5 @@
-# Discord ram limiter
+# Discord and Thorium ram limiter 
 By using the function called ```SetProcessWorkingSetSize();``` reduces memory usage by preventing unnecessary cache in the program.
-
-# Screenshots
-<img style src="https://raw.githubusercontent.com/faraaj/discord-ram-limiter/main/Screenshots/unknown.png"/>
 
 # Developers
 [miaf#2458](https://discord.com/users/308986559292768258)
